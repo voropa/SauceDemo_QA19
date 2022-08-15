@@ -36,8 +36,8 @@
     <properties>
         <seleniumVersion>3.141.59</seleniumVersion>
         <testNgVersion>7.4.0</testNgVersion>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <suiteXmlFile>loginTests.xml</suiteXmlFile>
         <aspectj.version>1.9.8</aspectj.version>
     </properties>
