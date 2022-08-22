@@ -6,14 +6,14 @@ pipeline {
         maven "M3"
     }
 
-    parameters {
+    parameters {[
      gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
        string(
                                 defaultValue: 'smokeTest.xml', 
                                 name: 'SUITE_NAME', 
                                 trim: true
                             )
-    }
+    ]}
 
   stages {
         stage('Run tests') {
