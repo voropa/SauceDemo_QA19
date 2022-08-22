@@ -6,7 +6,7 @@ pipeline {
         maven "M3"
     }
     
-    properties([parameters([string(defaultValue: 'smokeTest.xml', name: 'SUITE_NAME'), 
+    options([parameters([string(defaultValue: 'smokeTest.xml', name: 'SUITE_NAME'), 
                             gitParameter(branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH')])])
    
     // parameters {
