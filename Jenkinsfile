@@ -7,7 +7,12 @@ pipeline {
     }
 
     parameters {
-     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH',
+       string(
+                                defaultValue: 'smokeTest.xml', 
+                                name: 'SUITE_NAME', 
+                                trim: true
+                            )
     }
 
   stages {
