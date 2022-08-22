@@ -5,14 +5,12 @@ pipeline {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "M3"
     }
-    
-    options([parameters([string(defaultValue: 'smokeTest.xml', name: 'SUITE_NAME'), 
-                            gitParameter(branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH')])])
    
-    // parameters {
-     // string(defaultValue: 'smokeTest.xml', name: 'SUITE_NAME'),
-     // gitParameter(branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH')
-    // }
+    parameters {
+     string(defaultValue: 'smokeTest.xml', name: 'SUITE_NAME')
+     
+     gitParameter(branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH')
+    }
 
   stages {
         stage('Run tests') {
